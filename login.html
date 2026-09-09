@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Anhar Group</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+<main class="auth-card">
+  <a class="brand center" href="index.html"><span>ANHAR</span> GROUP</a>
+  <h1>Masuk ke Anhar Group</h1>
+  <p class="muted">Pembeli dan pemilik menggunakan halaman login yang sama.</p>
+
+  <form id="loginForm">
+    <label>Email<input id="email" type="email" required placeholder="nama@email.com"></label>
+    <label>Password<input id="password" type="password" required minlength="6" placeholder="Minimal 6 karakter"></label>
+    <button class="primary full" type="submit">Login</button>
+  </form>
+
+  <button id="googleBtn" class="google full">Masuk dengan Google</button>
+  <p id="message" class="message"></p>
+  <hr>
+  <p>Belum punya akun? <a href="#" id="registerLink">Daftar sebagai pembeli</a></p>
+  <p><a href="index.html">← Kembali ke toko</a></p>
+</main>
+<script type="module" src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anhar Group | Toko Sweater Online</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>ANHAR</span> GROUP</a>
+  <nav>
+    <a href="#produk">Produk</a>
+    <a href="#tentang">Tentang</a>
+    <a href="login.html" id="loginLink">Login</a>
+    <button class="cart-btn" id="cartBtn">🛒 Keranjang <b id="cartCount">0</b></button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <p class="eyebrow">ANHAR GROUP • SWEATER COLLECTION</p>
+    <h1>Sweater nyaman,<br><span>gaya makin keren.</span></h1>
+    <p class="hero-text">Temukan koleksi sweater Anhar Group dengan tampilan modern untuk sekolah, nongkrong, kuliah, dan aktivitas sehari-hari.</p>
+    <a href="#produk" class="primary">Belanja Sekarang</a>
+  </div>
+  <div class="hero-card">
+    <div class="hoodie-art">ANHAR<br><small>GROUP</small></div>
+    <p>Premium Sweater</p>
+  </div>
+</section>
+
+<section id="produk" class="section">
+  <div class="section-head">
+    <div><p class="eyebrow">KOLEKSI</p><h2>Produk Sweater</h2></div>
+    <input id="search" class="search" type="search" placeholder="Cari sweater...">
+  </div>
+  <div id="productGrid" class="product-grid"></div>
+</section>
+
+<section id="tentang" class="about">
+  <div><p class="eyebrow">TENTANG ANHAR GROUP</p><h2>Toko online sederhana yang siap berkembang.</h2></div>
+  <p>Katalog, login pembeli, keranjang, pemesanan, dan dashboard pemilik terhubung ke Firebase. Website dapat dipublikasikan gratis melalui GitHub Pages.</p>
+</section>
+
+<div id="cartPanel" class="drawer">
+  <div class="drawer-box">
+    <div class="drawer-head"><h2>Keranjang</h2><button id="closeCart">✕</button></div>
+    <div id="cartItems"></div>
+    <div class="total"><span>Total</span><strong id="cartTotal">Rp0</strong></div>
+    <button id="checkoutBtn" class="primary full">Checkout</button>
+    <p id="checkoutInfo" class="muted"></p>
+  </div>
+</div>
+
+<footer>© <span id="year"></span> Anhar Group. Semua hak dilindungi.</footer>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
