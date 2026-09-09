@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anhar Group - Toko Online</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="container navbar">
+
+            <a href="#" class="logo">
+                <span>🛍️</span> Anhar Group
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#beranda">Beranda</a>
+                <a href="#produk">Produk</a>
+                <a href="#tentang">Tentang</a>
+                <a href="#kontak">Kontak</a>
+            </nav>
+
+            <button class="cart-button" onclick="bukaKeranjang()">
+                🛒
+                <span id="jumlahKeranjang">0</span>
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="beranda">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <span class="badge">🔥 PROMO TERBARU</span>
+
+                <h1>
+                    Belanja Mudah,
+                    <span>Harga Bersahabat</span>
+                </h1>
+
+                <p>
+                    Temukan berbagai produk pilihan dengan harga terbaik.
+                    Belanja lebih mudah, cepat, dan aman hanya di TokoKu.
+                </p>
+
+                <a href="#produk" class="btn-primary">
+                    🛍️ Belanja Sekarang
+                </a>
+
+            </div>
+
+            <div class="hero-image">
+                🛒
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= KATEGORI ================= -->
+    <section class="kategori">
+
+        <div class="container">
+
+            <h2>Kategori Produk</h2>
+
+            <div class="kategori-list">
+
+                <button onclick="filterProduk('semua')" class="kategori-btn active">
+                    Semua
+                </button>
+
+                <button onclick="filterProduk('fashion')" class="kategori-btn">
+                    👕 Fashion
+                </button>
+
+                <button onclick="filterProduk('elektronik')" class="kategori-btn">
+                    💻 Elektronik
+                </button>
+
+                <button onclick="filterProduk('aksesoris')" class="kategori-btn">
+                    🎧 Aksesoris
+                </button>
+
+                <button onclick="filterProduk('lainnya')" class="kategori-btn">
+                    📦 Lainnya
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PRODUK ================= -->
+    <section class="produk-section" id="produk">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="small-title">KOLEKSI KAMI</span>
+                    <h2>Produk Terpopuler</h2>
+                </div>
+
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="🔎 Cari produk..."
+                        onkeyup="cariProduk()"
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="produk-grid" id="produkContainer">
+
+                <!-- Produk 1 -->
+                <div class="produk-card"
+                     data-kategori="fashion"
+                     data-nama="Kaos Premium">
+
+                    <div class="produk-image">
+                        👕
+                        <span class="label">NEW</span>
+                    </div>
+
+                    <div class="produk-info">
+
+                        <span class="kategori-produk">Fashion</span>
+
+                        <h3>Kaos Premium</h3>
+
+                        <p class="deskripsi">
+                            Kaos premium nyaman digunakan sehari-hari.
+                        </p>
+
+                        <div class="produk-bottom">
+
+                            <strong>Rp75.000</strong>
+
+                            <button onclick="tambahKeranjang(1)">
+                                + Keranjang
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Produk 2 -->
+                <div class="produk-card"
+                     data-kategori="elektronik"
+                     data-nama="Headset Gaming">
+
+                    <div class="produk-image">
+                        🎧
+                        <span class="label diskon">-20%</span>
+                    </div>
+
+                    <div class="produk-info">
+
+                        <span class="kategori-produk">Elektronik</span>
+
+                        <h3>Headset Gaming</h3>
+
+                        <p class="deskripsi">
+                            Headset gaming dengan suara jernih dan nyaman.
+                        </p>
+
+                        <div class="produk-bottom">
+
+                            <strong>Rp120.000</strong>
+
+                            <button onclick="tambahKeranjang(2)">
+                                + Keranjang
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Produk 3 -->
+                <div class="produk-card"
+                     data-kategori="elektronik"
+                     data-nama="Keyboard Mechanical">
+
+                    <div class="produk-image">
+                        ⌨️
+                    </div>
+
+                    <div class="produk-info">
+
+                        <span class="kategori-produk">Elektronik</span>
+
+                        <h3>Keyboard Mechanical</h3>
+
+                        <p class="deskripsi">
+                            Keyboard mechanical cocok untuk gaming dan kerja.
+                        </p>
+
+                        <div class="produk-bottom">
+
+                            <strong>Rp250.000</strong>
+
+                            <button onclick="tambahKeranjang(3)">
+                                + Keranjang
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Produk 4 -->
+                <div class="produk-card"
+                     data-kategori="aksesoris"
+                     data-nama="Jam Tangan">
+
+                    <div class="produk-image">
+                        ⌚
+                    </div>
+
+                    <div class="produk-info">
+
+                        <span class="kategori-produk">Aksesoris</span>
+
+                        <h3>Jam Tangan</h3>
+
+                        <p class="deskripsi">
+                            Jam tangan stylish untuk berbagai aktivitas.
+                        </p>
+
+                        <div class="produk-bottom">
+
+                            <strong>Rp180.000</strong>
+
+                            <button onclick="tambahKeranjang(4)">
+                                + Keranjang
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Produk 5 -->
+                <div class="produk-card"
+                     data-kategori="fashion"
+                     data-nama="Hoodie Premium">
+
+                    <div class="produk-image">
+                        🧥
+                        <span class="label">BEST</span>
+                    </div>
+
+                    <div class="produk-info">
+
+                        <span class="kategori-produk">Fashion</span>
+
+                        <h3>Hoodie Premium</h3>
+
+                        <p class="deskripsi">
+                            Hoodie lembut dan cocok digunakan sehari-hari.
+                        </p>
+
+                        <div class="produk-bottom">
+
+                            <strong>Rp150.000</strong>
+
+                            <button onclick="tambahKeranjang(5)">
+                                + Keranjang
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Produk 6 -->
+                <div class="produk-card"
+                     data-kategori="lainnya"
+                     data-nama="Tas Casual">
+
+                    <div class="produk-image">
+                        🎒
+                    </div>
+
+                    <div class="produk-info">
+
+                        <span class="kategori-produk">Lainnya</span>
+
+                        <h3>Tas Casual</h3>
+
+                        <p class="deskripsi">
+                            Tas casual dengan desain simpel dan modern.
+                        </p>
+
+                        <div class="produk-bottom">
+
+                            <strong>Rp100.000</strong>
+
+                            <button onclick="tambahKeranjang(6)">
+                                + Keranjang
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROMO ================= -->
+    <section class="promo">
+
+        <div class="container promo-box">
+
+            <div>
+                <span>🔥 PROMO SPESIAL</span>
+
+                <h2>Dapatkan Diskon Hingga 30%</h2>
+
+                <p>
+                    Jangan lewatkan promo menarik dari TokoKu.
+                </p>
+            </div>
+
+            <a href="#produk" class="btn-white">
+                Lihat Produk
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TENTANG ================= -->
+    <section class="tentang" id="tentang">
+
+        <div class="container tentang-content">
+
+            <div class="tentang-icon">
+                🏪
+            </div>
+
+            <div>
+
+                <span class="small-title">
+                    TENTANG TOKO
+                </span>
+
+                <h2>Selamat Datang di anhar group</h2>
+
+                <p>
+                    anhar adalah toko online yang menyediakan berbagai
+                    produk pilihan dengan harga terjangkau. Kami berusaha
+                    memberikan pengalaman belanja yang mudah, cepat,
+                    dan menyenangkan.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="kontak">
+
+        <div class="container footer-content">
+
+            <div>
+                <h2>🛍️ Anhar group</h2>
+
+                <p>
+                    Belanja mudah, cepat, dan terpercaya.
+                </p>
+            </div>
+
+            <div>
+                <h3>Kontak</h3>
+
+                <p>📱 WhatsApp: 085155028629</p>
+                <p>📧 Email: abrakss10@gmail.com</p>
+                <p>📍 Indonesia</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © <span id="tahun"></span> Anhar Group. All Rights Reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- ================= MODAL KERANJANG ================= -->
+    <div class="cart-modal" id="cartModal">
+
+        <div class="cart-box">
+
+            <div class="cart-header">
+
+                <h2>🛒 Keranjang</h2>
+
+                <button onclick="tutupKeranjang()">
+                    ✕
+                </button>
+
+            </div>
+
+            <div id="isiKeranjang" class="cart-content">
+                <!-- Keranjang dibuat JavaScript -->
+            </div>
+
+            <div class="cart-footer">
+
+                <div class="total">
+
+                    <span>Total</span>
+
+                    <strong id="totalHarga">
+                        Rp0
+                    </strong>
+
+                </div>
+
+                <button class="checkout-btn" onclick="checkoutWhatsApp()">
+                    📲 Checkout WhatsApp
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
